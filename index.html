@@ -16,7 +16,7 @@
 <body>
     
     <div class="mainDiv" align="right">
-        <h1 align="left">Firebase web app</h1>
+        <h1 id="heading" align="left">Firebase web app</h1>
         <textarea id="mainText" placeholder="Enter text here..."></textarea>
         <button id="submitBtn" onclick="submitClick();"> <i class="fas fa-arrow-right" aria-hidden="true"></i> </button>
     </div>
@@ -38,10 +38,21 @@
 
         var mainTxt = document.getElementById("mainText");
         var submitBtn = document.getElementById("submitBtn");
-    
+        var head = document.getElementById("heading");
+        var headRef = firebase.database().ref().child("Heading");
+
+        headRef.on('value', function(datasnapshot) {
+            head.innerText = datasnapshot.val();
+        });
+
         function submitClick() {
             var fbRef = firebase.database().ref();
-            fbRef.child('text').set('va2l');
+            var msg = mainTxt.value;
+
+            fbRef.on("child_added", snap=> {
+                //
+            });
+            fbRef.push().set(msg);
         }
     </script>
 
