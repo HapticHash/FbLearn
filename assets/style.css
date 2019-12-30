@@ -17,6 +17,7 @@ body {
 input, button {
   border: 0;
   padding: 10px;
+  cursor: pointer;
 }
 
 .mainDiv {
@@ -24,11 +25,20 @@ input, button {
   padding: 20px;
   width: 450px;
   margin: 0px auto;
-  margin-top: 200px;
+  margin-top: 3em;
   border-radius: 10px;
   box-shadow: 0 0 20px #333;
 }
 
+.botDiv {
+  background: #fff;
+  padding: 20px;
+  width: 450px;
+  margin: 0px auto;
+  margin-top: 3em;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #333;
+}
 h1 {
   font-size: 24px;
 }
